@@ -1,0 +1,6 @@
+#+TITLE: lunanode-cli
+
+* About
+
+This is my little fun project for studying and practicing lisp while building
+something potentially useful.
