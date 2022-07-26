@@ -18,7 +18,7 @@
 			                  :description "An image ID"
 			                  :short-name #\i
 			                  :long-name "image-id"
-                        :initial-value "630909" ;; "Ubuntu 22.04 64-bit (ISO)"
+                        :initial-value "630902" ;; "Ubuntu 22.04 64-bit (template)"
 			                  :key :image-id)
    (clingon:make-option :choice
 			                  :description "The region parameter applies a filter so that only images in the specified region are returned."
