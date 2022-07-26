@@ -7,25 +7,24 @@
 			                  :description "A label for this virtual machine, which will also be used as its hostname"
 			                  :short-name #\h
 			                  :long-name "hostname"
-                        :required t
 			                  :key :hostname)
    (clingon:make-option :string
 			                  :description "Either a numeric ID (see plan/list), or a string ID like \"m.2\" or \"s.4\""
 			                  :short-name #\p
 			                  :long-name "plan-id"
-                        :required t
+                        :initial-value "m.1s"
 			                  :key :plan-id)
    (clingon:make-option :string
 			                  :description "An image ID"
 			                  :short-name #\i
 			                  :long-name "image-id"
-                        :required t
+                        :initial-value "630909" ;; "Ubuntu 22.04 64-bit (ISO)"
 			                  :key :image-id)
    (clingon:make-option :choice
 			                  :description "The region parameter applies a filter so that only images in the specified region are returned."
 			                  :short-name #\r
 			                  :long-name "region"
-			                  :env-vars '("REGION")
+                        :initial-value "montreal"
 			                  :items '("montreal" "toronto" "france")
 			                  :key :region)
    (clingon:make-option :string
