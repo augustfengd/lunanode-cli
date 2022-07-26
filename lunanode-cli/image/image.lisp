@@ -1,7 +1,7 @@
 (in-package :lunanode-cli)
 
 (defun image/sub-commands ()
-  "Returns the list of sub-commands for the top-level command"
+  "Returns the list of sub-commands for the `image' command"
   (list
    (image/list/command)))
 

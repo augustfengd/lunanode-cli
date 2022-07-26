@@ -24,6 +24,10 @@
                               :components
                               ((:file "image")
                                (:file "list")))
+                             (:module "sshkey"
+                              :components
+                              ((:file "sshkey")
+                               (:file "list")))
                              (:module "completion"
                               :components
                               ((:file "completion")

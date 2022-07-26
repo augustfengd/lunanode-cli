@@ -1,7 +1,5 @@
 (in-package :lunanode-cli)
 
-;; list
-
 (defun image/list/options ()
   "Returns the options for the `list' command"
   (list
@@ -26,7 +24,7 @@
     (format t "~a" content)))
 
 (defun image/list/command ()
-  "list running virtual machines."
+  "list available images."
   (clingon:make-command
    :name "list"
    :description "list images."

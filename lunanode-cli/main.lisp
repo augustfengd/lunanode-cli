@@ -7,6 +7,7 @@
   (list
    (virtualmachine/command)
    (image/command)
+   (sshkey/command)
    (completion/command)))
 
 (defun top-level/options ()

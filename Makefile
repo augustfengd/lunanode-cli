@@ -1,6 +1,6 @@
 LISP := sbcl
 
-bin/lunanode-cli: lunanode-cli lunanode-cli/virtualmachine lunanode-cli/image lunanode-cli/completion  lunanode-cli.asd
+bin/lunanode-cli: lunanode-cli lunanode-cli/virtualmachine lunanode-cli/image lunanode-cli/sshkey lunanode-cli/completion  lunanode-cli.asd
 	$(LISP) --noinform \
 		--eval "(ql:quickload 'lunanode-cli)" \
 		--eval '(asdf:make :lunanode-cli)'  \
