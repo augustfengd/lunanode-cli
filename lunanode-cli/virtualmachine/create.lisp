@@ -27,14 +27,20 @@
 			                  :long-name "region"
 			                  :env-vars '("REGION")
 			                  :items '("montreal" "toronto" "france")
-			                  :key :region)))
+			                  :key :region)
+   (clingon:make-option :string
+			                  :description "A comma-separated list of key IDs"
+			                  :short-name #\k
+			                  :long-name "key-id"
+			                  :key :key-id)))
 
-(defun virtualmachine/create/params (hostname plan-id image-id region)
+(defun virtualmachine/create/params (hostname plan-id image-id region key-id)
   (list
    (if hostname (cons "hostname" hostname))
    (if plan-id (cons "plan_id" plan-id))
    (if image-id (cons "image_id" image-id))
-   (if region (cons "region" region))))
+   (if region (cons "region" region))
+   (if key-id (cons "key_id" key-id))))
 
 (defun virtualmachine/create/handler (cmd)
   "Handler for the `create' command"
@@ -45,7 +51,8 @@
                       (virtualmachine/create/params (clingon:getopt cmd :hostname)
                                                     (clingon:getopt cmd :plan-id)
                                                     (clingon:getopt cmd :image-id)
-                                                    (clingon:getopt cmd :region)))))
+                                                    (clingon:getopt cmd :region)
+                                                    (clingon:getopt cmd :key-id)))))
     (format t "~a" content)))
 
 (defun virtualmachine/create/command ()
