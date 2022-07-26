@@ -2,5 +2,59 @@
 
 * About
 
-This is my little fun project for studying and practicing lisp while building
-something potentially useful.
+This is my fun project for studying and practicing lisp while building something
+potentially useful.
+
+* Installing
+
+** Requirements
+
+  - ~sbcl~ >= 2.2.6 (and quicklisp)
+  - ~make~ >= 4.3
+
+** Building
+
+There are no release mechanism in-place yet, so please build `lunanode-cli` with
+a simple make command:
+
+#+begin_src shell
+make bin/lunanode-cli
+#+end_src
+
+
+* Usage
+
+The credentials to access lunanode services can be provided as either
+environment variables *${API_ID}* and *${API_KEY}*, or via command-line
+arguments (not recommended).
+
+Only a few of the lunanode service interfaces have been implemented as commands,
+notably some operations on the /virtualmachine/ and /image/ services.
+
+#+begin_src text
+NAME:
+  lunanode-cli - A command-line interface program for interacting with lunanode cloud services.
+
+USAGE:
+  lunanode-cli [global-options] [<command>] [command-options] [arguments ...]
+
+  A CLI program for interfacing  with lunanode cloud services.
+
+OPTIONS:
+      --api-id <VALUE>   API ID [env: $API_ID]
+      --api-key <VALUE>  API KEY [env: $API_KEY]
+      --help             display usage information and exit
+      --version          display version and exit
+
+COMMANDS:
+  virtualmachine  interact with the virtual machine service.
+  image           interact with the images service.
+  completion      generate shell completion scripts.
+
+AUTHORS:
+  August Feng <augustfengd@gmail.com>
+
+LICENSE:
+  BSD 2-Clause
+#+end_src
+
