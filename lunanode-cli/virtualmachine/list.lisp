@@ -1,12 +1,23 @@
 (in-package :lunanode-cli)
 
+(defun virtualmachine/list/print (content)
+  "print virtual machines in a tabulated format"
+  (let ((data (read-json content)))
+    (format t "~va ~va ~va ~va~%" 37 "ID" 16 "Name" 24 "Public IP" 24 "Private IP")
+    (loop for vm across (gethash "vms" data)
+          do (format t "~va ~va ~va ~va~%"
+                     37 (gethash "vm_id" vm)
+                     16 (gethash "hostname" vm)
+                     24 (gethash "primaryip" vm)
+                     24 (gethash "privateip" vm)))))
+
 (defun virtualmachine/list/handler (cmd)
   "Handler for the `list' command"
   (let ((content (api (clingon:getopt cmd :api-id)
                       (clingon:getopt cmd :api-key)
                       "vm"
                       "list")))
-    (format t "~a" content)))
+    (virtualmachine/list/print content)))
 
 (defun virtualmachine/list/command ()
   "list running virtual machines."

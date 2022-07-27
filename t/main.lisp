@@ -90,3 +90,7 @@
       (fiveam:is (equalp
                   body
                   expected)))))
+
+(fiveam:test virtualmachine/list/print
+  (let ((content "{\"vms\":[{\"vm_id\":\"81ebdd9e-178f-49a4-816b-a1fc46fc5869\",\"name\":\"foobar\",\"plan_id\":\"123\",\"hostname\":\"foobar\",\"primaryip\":\"1.1.1.1\",\"privateip\":\"1.1.1.1\",\"ram\":\"1024\",\"vcpu\":\"1\",\"storage\":\"15\",\"bandwidth\":\"1000\",\"region\":\"montreal\",\"os_status\":\"active\"}],\"success\":\"yes\"}"))
+    (fiveam:is (stringp (lunanode-cli::virtualmachine/list/print content))))) ;; TODO: may be difficult to test this function as the output is a side effect.
