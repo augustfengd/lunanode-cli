@@ -1,5 +1,16 @@
 (in-package :lunanode-cli)
 
+(defun image/list/print (content)
+  "print images in a tabulated format"
+  (let ((data (read-json content)))
+    (format t "~va ~va ~va ~va~%" 8 "ID" 64 "Name" 16 "Region" 8 "Status")
+    (loop for vm across (gethash "images" data)
+          do (format t "~va ~va ~va ~va~%"
+                     8 (gethash "image_id" vm)
+                     64 (gethash "name" vm)
+                     16 (gethash "region" vm)
+                     8 (gethash "status" vm)))))
+
 (defun image/list/options ()
   "Returns the options for the `list' command"
   (list
@@ -21,7 +32,7 @@
                       "image"
                       "list"
                       (image/list/params (clingon:getopt cmd :region)))))
-    (format t "~a" content)))
+    (image/list/print content)))
 
 (defun image/list/command ()
   "list available images."
