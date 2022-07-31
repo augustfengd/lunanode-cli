@@ -7,6 +7,7 @@
 			                  :description "A label for this virtual machine, which will also be used as its hostname"
 			                  :short-name #\h
 			                  :long-name "hostname"
+                        :required t
 			                  :key :hostname)
    (clingon:make-option :string
 			                  :description "Either a numeric ID (see plan/list), or a string ID like \"m.2\" or \"s.4\""
