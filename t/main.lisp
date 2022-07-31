@@ -98,3 +98,7 @@
 (fiveam:test image/list/print
   (let ((content "{\"images\":[{\"image_id\":\"630902\",\"name\":\"Ubuntu 22.04 64-bit (template)\",\"region\":\"montreal\",\"status\":\"active\"}],\"success\":\"yes\"}"))
     (fiveam:is (stringp (lunanode-cli::image/list/print content))))) ;; TODO: may be difficult to test this function as the output is a side effect.
+
+(fiveam:test sshkey/list/print
+             (let ((content "{\"0\":{\"id\":\"4055\",\"name\":\"augustfengd\",\"val\":\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8uyj9CjbNOSW\/fkR2sAcif52NwDv\/2Cu9BTRVHO0bO augustfengd\",\"value\":\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8uyj9CjbNOSW\/fkR2sAcif52NwDv\/2Cu9BTRVHO0bO augustfengd\"},\"1\":{\"id\":\"4075\",\"name\":\"temp\",\"val\":\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDTo5IGrsi19luHQauRduF9gAgYHJPkvU5W4bscLaDqj augustfengd@DESKTOP2020\",\"value\":\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDTo5IGrsi19luHQauRduF9gAgYHJPkvU5W4bscLaDqj augustfengd@DESKTOP2020\"},\"success\":\"yes\"}"))
+               (lunanode-cli::sshkey/list/print content))) ;; TODO: may be difficult to test this function as the output is a side effect.
