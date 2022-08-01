@@ -10,7 +10,7 @@
    (sshkey/command)
    (ssh/command)
    (plan/list/command)
-   (billing/command)
+   (billing/credit/command)
    (completion/command)))
 
 (defun top-level/options ()
