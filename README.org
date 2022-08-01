@@ -5,7 +5,7 @@
 This is my fun project for studying and practicing lisp while building something
 potentially useful.
 
-* Installing
+* Installation
 
 ** Requirements
 
@@ -14,22 +14,41 @@ potentially useful.
 
 ** Building
 
-There are no release mechanism in-place yet, so please build `lunanode-cli` with
+There are no release mechanism in-place yet, so please build ~lunanode-cli~ with
 a simple make command:
 
 #+begin_src shell
-make bin/lunanode-cli
+  make bin/lunanode-cli
 #+end_src
 
+** Installing
+
+Once the binary is built, the ~install~ target can copy the binary to
+~$HOME/.local/bin~ path.
+
+#+begin_src shell
+  make install
+#+end_src
+
+It is also possible to have shell completion in zsh by dumping the completion
+script somewhere in a *$FPATH* directory.
+
+*personal note*: not sure if I would recommend this, but I've been dumping all
+my completion scripts into /$HOME/.oh-my-zsh/cache/completions/ and letting
+[[https://github.com/ohmyzsh/ohmyzsh][oh-my-zsh]] source them.
+
+#+begin_src shell
+  lunanode-cli completion zsh > ~/.oh-my-zsh/cache/completions/_lunanode-cli
+#+end_src
 
 * Usage
 
 The credentials to access lunanode services can be provided as either
-environment variables *${API_ID}* and *${API_KEY}*, or via command-line
+environment variables *$API_ID* and *$API_KEY*, or via command-line
 arguments (not recommended).
 
 Only a few of the lunanode service interfaces have been implemented as commands,
-notably some operations on the /virtualmachine/ and /image/ services.
+notably some operations on the /virtualmachine/, /sshkey/ and /image/ services.
 
 #+begin_src text
 NAME:
