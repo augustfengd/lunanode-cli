@@ -70,6 +70,8 @@ COMMANDS:
   image           interact with the images service.
   sshkey          interact with the sshkeys service.
   ssh             ssh into a virtual machine.
+  plan            list pricing plans.
+  billing         interact with the billing service.
   completion      generate shell completion scripts.
 
 AUTHORS:
