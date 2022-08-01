@@ -27,16 +27,17 @@
                              (:module "sshkey"
                               :components
                               ((:file "sshkey")
-                               (:file "list")))
+                               (:file "list")
+                               (:file "remove")))
                              (:module "ssh"
                               :components
                               ((:file "ssh")))
                              (:module "plan"
                               :components
-                                      ((:file "plan")))
+                              ((:file "plan")))
                              (:module "billing"
                               :components
-                                      ((:file "billing")))
+                              ((:file "billing")))
                              (:module "completion"
                               :components
                               ((:file "completion")

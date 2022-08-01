@@ -3,7 +3,8 @@
 (defun sshkey/sub-commands ()
   "Returns the list of sub-commands for the `sshkey' command"
   (list
-   (sshkey/list/command)))
+   (sshkey/list/command)
+   (sshkey/remove/command)))
 
 (defun sshkey/handler (cmd)
   "Handler for the `sshkey' command"
