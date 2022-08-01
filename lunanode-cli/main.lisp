@@ -9,6 +9,7 @@
    (image/command)
    (sshkey/command)
    (ssh/command)
+   (plan/list/command)
    (billing/command)
    (completion/command)))
 
