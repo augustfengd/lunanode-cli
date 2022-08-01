@@ -28,6 +28,9 @@
                               :components
                               ((:file "sshkey")
                                (:file "list")))
+                             (:module "ssh"
+                              :components
+                              ((:file "ssh")))
                              (:module "completion"
                               :components
                               ((:file "completion")

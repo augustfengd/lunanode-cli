@@ -8,6 +8,7 @@
    (virtualmachine/command)
    (image/command)
    (sshkey/command)
+   (ssh/command)
    (completion/command)))
 
 (defun top-level/options ()

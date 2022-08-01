@@ -50,6 +50,7 @@ COMMANDS:
   virtualmachine  interact with the virtual machine service.
   image           interact with the images service.
   sshkey          interact with the sshkeys service.
+  ssh             ssh into a virtual machine.
   completion      generate shell completion scripts.
 
 AUTHORS:
