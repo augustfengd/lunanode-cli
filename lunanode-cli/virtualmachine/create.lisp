@@ -35,12 +35,13 @@
 			                  :key :key-id)))
 
 (defun virtualmachine/create/params (hostname plan-id image-id region key-id)
-  (list
-   (if hostname (cons "hostname" hostname))
-   (if plan-id (cons "plan_id" plan-id))
-   (if image-id (cons "image_id" image-id))
-   (if region (cons "region" region))
-   (if key-id (cons "key_id" key-id))))
+  (let ((params (list
+                 (when hostname (cons "hostname" hostname))
+                 (when plan-id (cons "plan_id" plan-id))
+                 (when image-id (cons "image_id" image-id))
+                 (when region (cons "region" region))
+                 (when key-id (cons "key_id" key-id)))))
+    (remove nil params)))
 
 (defun virtualmachine/create/handler (cmd)
   "Handler for the `create' command"
