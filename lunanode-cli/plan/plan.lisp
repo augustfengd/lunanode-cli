@@ -27,6 +27,6 @@
   "list available plans."
   (clingon:make-command
    :name "plan"
-   :description "list plans."
+   :description "list pricing plans."
    :handler #'plan/list/handler
-   :examples '(("list" . "lunanode-cli plan list"))))
+   :examples '(("plan" . "lunanode-cli plan"))))
