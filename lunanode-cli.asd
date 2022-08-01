@@ -31,6 +31,9 @@
                              (:module "ssh"
                               :components
                               ((:file "ssh")))
+                             (:module "billing"
+                              :components
+                                      ((:file "billing")))
                              (:module "completion"
                               :components
                               ((:file "completion")

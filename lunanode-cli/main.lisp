@@ -9,6 +9,7 @@
    (image/command)
    (sshkey/command)
    (ssh/command)
+   (billing/command)
    (completion/command)))
 
 (defun top-level/options ()
