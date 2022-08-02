@@ -43,9 +43,11 @@ my completion scripts into /$HOME/.oh-my-zsh/cache/completions/ and letting
 
 * Usage
 
-The credentials to access lunanode services can be provided as either
-environment variables *$API_ID* and *$API_KEY*, or via command-line
-arguments (not recommended).
+The credentials to access lunanode services can be provided in any of the
+following ways:
+  - a credentials file, e.g: ~/.config/lunanode-cli/credentials.json
+  - a set of environment variables, *$API_ID* and *$API_KEY*.
+  - via command-line arguments (not recommended).
 
 Only a few of the lunanode service interfaces have been implemented as commands,
 notably some operations on the /virtualmachine/, /sshkey/ and /image/ services.
