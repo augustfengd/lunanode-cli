@@ -15,6 +15,6 @@
   (clingon:make-command
    :name "sshkey"
    :description "interact with the sshkeys service."
-	 :handler #'sshkey/handler
+   :handler #'sshkey/handler
    :sub-commands (sshkey/sub-commands)
    :examples '(("list" . "lunanode-cli sshkey list"))))

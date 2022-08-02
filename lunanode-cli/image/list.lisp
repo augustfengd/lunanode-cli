@@ -15,12 +15,12 @@
   "Returns the options for the `list' command"
   (list
    (clingon:make-option :choice
-			                  :description "The region parameter applies a filter so that only image in the specified region are returned."
-			                  :short-name #\r
-			                  :long-name "region"
-			                  :env-vars '("REGION")
-			                  :items '("montreal" "toronto" "france")
-			                  :key :region)))
+                        :description "The region parameter applies a filter so that only image in the specified region are returned."
+                        :short-name #\r
+                        :long-name "region"
+                        :env-vars '("REGION")
+                        :items '("montreal" "toronto" "france")
+                        :key :region)))
 
 (defun image/list/params (region)
   (if region (list (cons "region" region))))

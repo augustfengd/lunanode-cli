@@ -4,35 +4,35 @@
   "Returns the options for the `list' command"
   (list
    (clingon:make-option :string
-			                  :description "A label for this virtual machine, which will also be used as its hostname"
-			                  :short-name #\h
-			                  :long-name "hostname"
+                        :description "A label for this virtual machine, which will also be used as its hostname"
+                        :short-name #\h
+                        :long-name "hostname"
                         :required t
-			                  :key :hostname)
+                        :key :hostname)
    (clingon:make-option :string
-			                  :description "Either a numeric ID (see plan/list), or a string ID like \"m.2\" or \"s.4\""
-			                  :short-name #\p
-			                  :long-name "plan-id"
+                        :description "Either a numeric ID (see plan/list), or a string ID like \"m.2\" or \"s.4\""
+                        :short-name #\p
+                        :long-name "plan-id"
                         :initial-value "m.1s"
-			                  :key :plan-id)
+                        :key :plan-id)
    (clingon:make-option :string
-			                  :description "An image ID"
-			                  :short-name #\i
-			                  :long-name "image-id"
+                        :description "An image ID"
+                        :short-name #\i
+                        :long-name "image-id"
                         :initial-value "630902" ;; "Ubuntu 22.04 64-bit (template)"
-			                  :key :image-id)
+                        :key :image-id)
    (clingon:make-option :choice
-			                  :description "The region parameter applies a filter so that only images in the specified region are returned."
-			                  :short-name #\r
-			                  :long-name "region"
+                        :description "The region parameter applies a filter so that only images in the specified region are returned."
+                        :short-name #\r
+                        :long-name "region"
                         :initial-value "montreal"
-			                  :items '("montreal" "toronto" "france")
-			                  :key :region)
+                        :items '("montreal" "toronto" "france")
+                        :key :region)
    (clingon:make-option :string
-			                  :description "A comma-separated list of key IDs"
-			                  :short-name #\k
-			                  :long-name "key-id"
-			                  :key :key-id)))
+                        :description "A comma-separated list of key IDs"
+                        :short-name #\k
+                        :long-name "key-id"
+                        :key :key-id)))
 
 (defun virtualmachine/create/params (hostname plan-id image-id region key-id)
   (let ((params (list

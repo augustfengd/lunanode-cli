@@ -24,12 +24,12 @@
    (clingon:make-option :string
                         :description "API ID"
                         :long-name "api-id"
-			                  :env-vars '("API_ID")
+                        :env-vars '("API_ID")
                         :key :api-id)
    (clingon:make-option :string
                         :description "API KEY"
                         :long-name "api-key"
-			                  :env-vars '("API_KEY")
+                        :env-vars '("API_KEY")
                         :key :api-key)))
 
 (defun top-level/handler (cmd)
@@ -46,7 +46,7 @@
                         :authors '("August Feng <augustfengd@gmail.com>")
                         :license "BSD 2-Clause"
                         :options (top-level/options)
-			                  :handler #'top-level/handler
+                        :handler #'top-level/handler
                         :sub-commands (top-level/sub-commands)))
 
 (defun main ()

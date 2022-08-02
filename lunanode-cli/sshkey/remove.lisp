@@ -4,11 +4,11 @@
   "Returns the options for the `remove' command"
   (list
    (clingon:make-option :string
-			                  :description "the SSH key ID"
-			                  :short-name #\k
-			                  :long-name "key-id"
+                        :description "the SSH key ID"
+                        :short-name #\k
+                        :long-name "key-id"
                         :required t
-			                  :key :key-id)))
+                        :key :key-id)))
 
 (defun sshkey/remove/params (key-id)
   (list (cons "key_id" key-id)))

@@ -4,16 +4,16 @@
   "Returns the options for the `ssh' command"
   (list
    (clingon:make-option :string
-			                  :description "user to log in as."
-			                  :short-name #\u
-			                  :long-name "user"
-			                  :key :user)
+                        :description "user to log in as."
+                        :short-name #\u
+                        :long-name "user"
+                        :key :user)
    (clingon:make-option :string
-			                  :description "hostname of the virtual machine."
-			                  :short-name #\h
-			                  :long-name "hostname"
+                        :description "hostname of the virtual machine."
+                        :short-name #\h
+                        :long-name "hostname"
                         :required t
-			                  :key :hostname)))
+                        :key :hostname)))
 
 (defun ssh/run (content &key user hostname)
   "ssh into the machine."

@@ -4,11 +4,11 @@
   "Returns the options for the `list' command"
   (list
    (clingon:make-option :string
-			                  :description "The VM UUID"
-			                  :short-name #\v
-			                  :long-name "vm-id"
+                        :description "The VM UUID"
+                        :short-name #\v
+                        :long-name "vm-id"
                         :required t
-			                  :key :vm-id)))
+                        :key :vm-id)))
 
 (defun virtualmachine/delete/params (vm-id)
   (list (cons "vm_id" vm-id)))
