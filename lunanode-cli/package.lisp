@@ -4,3 +4,7 @@
   (:export :main))
 
 (in-package :lunanode-cli)
+
+(defun get-from-credentials-file (credentials-file k) ;; TODO: find a better place to put this.
+  (with-open-file (s credentials-file :if-does-not-exist nil)
+    (when s (gethash k (shasht:read-json s)))))

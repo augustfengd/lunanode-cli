@@ -17,8 +17,8 @@
 
 (defun plan/list/handler (cmd)
   "Handler for the `list' command"
-  (let ((content (api (clingon:getopt cmd :api-id)
-                      (clingon:getopt cmd :api-key)
+  (let ((content (api (or (get-from-credentials-file (clingon:getopt cmd :credentials-file) "API_ID") (clingon:getopt cmd :api-id))
+                      (or (get-from-credentials-file (clingon:getopt cmd :credentials-file) "API_KEY") (clingon:getopt cmd :api-key))
                       "plan"
                       "list")))
     (plan/list/print content)))

@@ -17,6 +17,11 @@
   "Returns the options for the top-level command"
   (list
    (clingon:make-option :string
+                        :description "credentials file."
+                        :long-name "credentials-file"
+                        :initial-value "~/.config/lunanode-cli/credentials.json"
+                        :key :credentials-file)
+   (clingon:make-option :string
                         :description "API ID"
                         :long-name "api-id"
 			                  :env-vars '("API_ID")
